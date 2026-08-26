@@ -1,5 +1,9 @@
 {
   "appId": "com.rescuelink.app",
-  "appName": "Rescuelink-AI",
-  "webDir": "dist"
+  "appName": "RescueLink AI",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  }
 }

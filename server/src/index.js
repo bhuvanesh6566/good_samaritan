@@ -15,14 +15,17 @@ const setupSocketHandlers = require('./socket/handlers');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const CORS_ORIGIN = [process.env.CLIENT_URL, 'http://localhost:5173', 'http://127.0.0.1:5173'].filter(Boolean);
-
-app.use(cors({ origin: CORS_ORIGIN, credentials: true }));
+app.use(cors({
+  origin: true,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
 app.use(express.json({ limit: '10mb' })); // allow base64 image payloads
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: { origin: CORS_ORIGIN, methods: ['GET', 'POST'], credentials: true }
+  cors: { origin: '*', methods: ['GET', 'POST'] }
 });
 
 app.set('io', io);

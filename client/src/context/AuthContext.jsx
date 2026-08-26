@@ -1,6 +1,9 @@
 import { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'https://good-samaritan.onrender.com';
+axios.defaults.baseURL = BACKEND_URL;
+
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
@@ -12,10 +15,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL || '';
-    if (API_URL) {
-      axios.defaults.baseURL = API_URL;
-    }
     if (token) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       fetchMe();
