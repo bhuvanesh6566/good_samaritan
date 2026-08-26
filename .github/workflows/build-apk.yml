@@ -1,0 +1,62 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: client/package-lock.json
+
+      - name: Setup Java JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Client Dependencies
+        run: |
+          cd client
+          npm ci
+
+      - name: Build Web Assets
+        run: |
+          cd client
+          npm run build
+
+      - name: Sync Capacitor Android
+        run: |
+          cd client
+          npx cap sync android
+
+      - name: Make Gradlew Executable
+        run: |
+          cd client/android
+          chmod +x gradlew
+
+      - name: Build Debug APK
+        run: |
+          cd client/android
+          ./gradlew assembleDebug --stacktrace
+
+      - name: Upload Debug APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rescuelink-app-debug
+          path: client/android/app/build/outputs/apk/debug/app-debug.apk
+
