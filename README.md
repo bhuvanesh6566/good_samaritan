@@ -1,3 +1,79 @@
+<div align="center">
+
+# good samaritan
+
+**A documented software project by [Bhuvaneshwaran S](https://github.com/bhuvanesh6566).**
+
+[![GitHub](https://img.shields.io/badge/GitHub-bhuvanesh6566-181717?logo=github)](https://github.com/bhuvanesh6566)
+[![Issues](https://img.shields.io/github/issues/bhuvanesh6566/good_samaritan)](https://github.com/bhuvanesh6566/good_samaritan/issues)
+
+[Source Code](https://github.com/bhuvanesh6566/good_samaritan) · [Report a Bug](https://github.com/bhuvanesh6566/good_samaritan/issues)
+
+</div>
+
+---
+
+## Table of Contents
+
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
+## About
+
+This README uses a consistent project-documentation format while preserving the repository's existing technical documentation below.
+
+## Features
+
+- ✅ Project-specific functionality documented below
+- ✅ Setup and usage information
+- ✅ Extensible project structure
+
+## Tech Stack
+
+See the project documentation below for the technologies used by this repository.
+
+## Getting Started
+
+Clone the repository and follow the project-specific setup instructions below.
+
+```bash
+git clone https://github.com/bhuvanesh6566/good_samaritan.git
+cd good_samaritan
+```
+
+## Usage
+
+Use the project-specific commands documented below.
+
+## Project Structure
+
+Refer to the repository tree and the detailed documentation below.
+
+## Roadmap
+
+- [ ] Add screenshots or demo GIF
+- [ ] Expand setup/troubleshooting documentation
+- [ ] Add automated testing documentation
+
+## Contributing
+
+Open an issue for bugs or feature requests, then submit focused pull requests with clear descriptions.
+
+## License
+
+See [LICENSE](LICENSE) if present.
+
+---
+
+# Project Documentation
+
 # 🚨 RescueLink AI
 
 > *Every second counts. Be the help.*
